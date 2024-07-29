@@ -1,0 +1,111 @@
+﻿@model asm1.Entities.DienThoai
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row mt-3">
+        <div class="col-lg-5 d-flex flex-column justify-content-center">
+            <div class="text-center">
+                <img class="img-fluid" src="~/images/DienThoai/@Model.HinhAnh" alt="" width="400px">
+            </div>
+            <div class="mt-3 text-center">
+                <img class="img-thumbnail" src="~/images/DienThoai/@Model.HinhAnh" alt="" width="50px">
+                <img class="img-thumbnail" src="~/images/DienThoai/@Model.HinhAnh" alt="" width="50px">
+                <img class="img-thumbnail" src="~/images/DienThoai/@Model.HinhAnh" alt="" width="50px">
+                <img class="img-thumbnail" src="~/images/DienThoai/@Model.HinhAnh" alt="" width="50px">
+                <img class="img-thumbnail" src="~/images/DienThoai/@Model.HinhAnh" alt="" width="50px">
+            </div>
+        </div>
+        <div class="col-lg-7">
+            <div class="m-3">
+                <ul style="list-style: none;">
+                    <li><h3>@Model.TenDt ( @Model.Ram - @Model.DungLuong )</h3></li>
+                    <li style="font-size: large;">
+                        Giá:
+                        <span class="fw-bold text-danger">@Model.Gia.ToString("#,###") VNĐ</span>
+                        <span class="badge bg-danger">-1%</span>
+                        <span class="badge bg-secondary">Trả góp 0%</span>
+                    </li>
+                    <li class="mt-3">
+                        <div class="card">
+                            <div class="card-header">
+                                <p class="fw-bold" style="margin: 0px; padding: 0px;">Khuyến mãi</p>
+                                <i>Giá và khuyến mãi dự kiến áp dụng đến 23:00 | 31/01</i>
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <span class="sttkm rounded-circle">1</span>
+                                    <span class="ms-3">Thu cũ Đổi mới: Giảm đến 2 triệu (Tuỳ model máy cũ, Không kèm thanh toán qua cổng online, mua kèm)</span>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="sttkm rounded-circle">2</span>
+                                    <span class="ms-3">Nhập mã MMTGDD123 giảm ngay 1% tối đa 100.000đ khi thanh toán qua MOMO</span>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="sttkm rounded-circle">3</span>
+                                    <span class="ms-3">Nhập mã VNPAYTGDD giảm từ 50,000đ đến 200,000đ (Áp dụng tùy giá trị đơn hàng) khi thanh toán qua VNPAY-QR</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="row d-flex justify-content-center m-4">
+                <div class="col-sm-12 d-flex" style="gap: 10px;">
+                    <button class="mt-2 btn btn-danger" type="button" style="width: calc(100% - 100px); height: 60px; font-size: 1em;">
+                        <strong>Mua ngay</strong>
+                        <p style="font-size: 0.7em;">(Giao nhanh từ 2 giờ hoặc nhận tại cửa hàng)</p>
+                    </button>
+                    <a class="border border-danger mt-2 btn btn-light" type="button" style="width: 90px; height: 60px; " asp-controller="GioHang" asp-action="Buy" asp-route-id="@Model.MaDt">
+                        <i class="bi bi-minecart" style="font-size: 20px;">+</i>
+                        <p style="font-size: 0.6em;">Thêm vào giỏ</p>
+                    </a>
+                </div>
+                <div class="col-sm-6 d-flex justify-content-center">
+                    <button class="mt-2 btn btn-primary w-100" type="button" style=" height: 60px; font-size: 1em;">
+                        <strong>Trả góp 0%</strong>
+                        <br>
+                        <span>Trả trước chỉ từ 0₫</span>
+                    </button>
+                </div>
+                <div class="col-sm-6 d-flex justify-content-center">
+                    <button class=" mt-2 btn btn-primary w-100" type="button" style=" height: 60px; font-size: 1em;">
+                        <strong>Trả góp qua thẻ</strong>
+                        <br>
+                        <span>(Visa, Mastercard, JCB)</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Thông số kỹ thuật</strong>
+                </div>
+                <div class="card-body">
+                    <ul style="list-style: none; margin: 5px; font-size: 16px;">
+                        <li class="m-2">Màn hình: OLED6.1"Super Retina XDR</li>
+                        <li class="m-2">Hệ điều hành: iOS 17</li>
+                        <li class="m-2">Camera sau: Chính 48 MP & Phụ 12 MP</li>
+                        <li class="m-2">Camera trước: 12 MP</li>
+                        <li class="m-2">Chip: Apple A16 Bionic</li>
+                    </ul>
+                    <div class="d-flex justify-content-center">
+                        <button data-bs-toggle="modal" data-bs-target="#chiTietSpModal" type="button" class="btn btn-light border border-primary">
+                            <span>Xem thêm thông số chi tiết</span>
+                            <i class="bi bi-caret-right-fill"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7">
+        </div>
+    </div>
+</div>

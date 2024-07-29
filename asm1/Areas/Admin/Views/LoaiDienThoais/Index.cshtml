@@ -1,0 +1,41 @@
+﻿@model IEnumerable<asm1.Entities.LoaiDienThoai>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Loại điện thoại</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaLoaiDt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenLoaiDt)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaLoaiDt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenLoaiDt)
+            </td>
+            <td>
+                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.MaLoaiDt">Edit</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.MaLoaiDt">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

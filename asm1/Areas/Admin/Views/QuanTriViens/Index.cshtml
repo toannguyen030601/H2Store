@@ -1,0 +1,47 @@
+﻿@model IEnumerable<asm1.Entities.QuanTriVien>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1 class="text-center">Quản trị viên</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TaiKhoanQtv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MatKhauQtv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenQtv)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaiKhoanQtv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MatKhauQtv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenQtv)
+            </td>
+            <td>
+                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.MaQtv">Edit</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.MaQtv">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

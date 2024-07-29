@@ -1,0 +1,93 @@
+﻿@using X.PagedList.Mvc.Core
+@model X.PagedList.IPagedList<asm1.Entities.DienThoai>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Điện thoại</h2>
+<div class="row mb-5">
+    <div class="col">
+        <a class="btn btn-primary" asp-controller="DienThoai" asp-action="Create">Create</a>
+    </div>
+    <div class="col d-flex justify-content-end">
+        <form asp-action="Index" method="get" class="form-check-inline">
+            <div class="input-group">
+                <input class="form-control" type="text" name="TenDt" placeholder="Nhập tên cần tìm" />
+                <button class="btn btn-light btn-group border border-dark">Tìm</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th>MaDt</th>
+            <th>TenDt</th>
+            <th>Gia</th>
+            <th>Ram</th>
+            <th>DungLuong</th>
+            <th>MaLoaiDt</th>
+            <th>HinhAnh</th>
+            <th>Mota</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var dt in Model)
+        {
+            <tr>
+                <td>@dt.MaDt</td>
+                <td>@dt.TenDt</td>
+                <td>@dt.Gia</td>
+                <td>@dt.Ram</td>
+                <td>@dt.DungLuong</td>
+                <td>@dt.MaLoaiDt</td>
+                <td><img src="/images/Dienthoai/@dt.HinhAnh" width="60px" /></td>
+                <td>@dt.Mota</td>
+                <td>
+                    <a class="btn btn-success" asp-controller="DienThoai" asp-action="Edit" asp-route-id="@dt.MaDt">Edit</a>
+                    <a class="btn btn-danger" asp-controller="DienThoai" asp-action="Delete" asp-route-id="@dt.MaDt">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="row mt-3">
+    @Html.PagedListPager(Model, page => Url.Action("Index","DienThoai", new { page = page }), new PagedListRenderOptions { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true, MaximumPageNumbersToDisplay = 5 })
+</div>
+<style>
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+    }
+
+        .pagination li {
+            margin: 0 5px;
+        }
+
+            .pagination li a {
+                color: #007bff;
+                text-decoration: none;
+                padding: 5px 10px;
+                border: 1px solid #007bff;
+                border-radius: 3px;
+            }
+
+            .pagination li.active a {
+                background-color: #007bff;
+                color: #fff;
+                border-color: #007bff;
+            }
+
+            .pagination li.disabled a {
+                color: #ccc;
+                pointer-events: none;
+            }
+</style>
+

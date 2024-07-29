@@ -1,0 +1,62 @@
+﻿@model asm1.ViewModels.DienThoaiDto
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4>DienThoai</h4>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mt-3">
+                <label class="control-label">MaDt</label>
+                <input class="form-control" value="@ViewData["MaDt"]" readonly />
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="TenDt" class="control-label"></label>
+                <input asp-for="TenDt" class="form-control" />
+                <span asp-validation-for="TenDt" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="Gia" class="control-label"></label>
+                <input asp-for="Gia" class="form-control" />
+                <span asp-validation-for="Gia" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="Ram" class="control-label"></label>
+                <input asp-for="Ram" class="form-control" />
+                <span asp-validation-for="Ram" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="DungLuong" class="control-label"></label>
+                <input asp-for="DungLuong" class="form-control" />
+                <span asp-validation-for="DungLuong" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="MaLoaiDt" class="control-label"></label>
+                <select asp-for="MaLoaiDt" class="form-control" asp-items="ViewBag.MaLoaiDt"></select>
+            </div>
+            <div class="row mt-3">
+                <div class="offset-sm-4 col-sm-8">
+                    <img src="/images/Dienthoai/@ViewData["HinhAnh"]" width="150px" />
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="FileHinhAnh" class="control-label"></label>
+                <input asp-for="FileHinhAnh" class="form-control" />
+                <span asp-validation-for="FileHinhAnh" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="Mota" class="control-label"></label>
+                <input asp-for="Mota" class="form-control" />
+                <span asp-validation-for="Mota" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <input type="submit" value="Edit" class="btn btn-primary" />
+                <a class="btn btn-light" asp-action="Index">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

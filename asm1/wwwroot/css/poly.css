@@ -1,0 +1,142 @@
+body{
+    padding: 0px;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    font-size: 15px;
+}
+
+header{
+    position: relative;
+}
+
+.shopping-mall{
+    position: absolute;
+    bottom: 20px;
+    font-variant: small-caps;
+}
+
+.shopping-mall>h1{
+    font-family: Impact;
+    font-size: 50px;
+    color:  white;
+    letter-spacing: 1px;
+    text-shadow: 0 0 2px black;
+    padding-bottom: 0px;
+    border-bottom: 1px dotted gray;
+    margin: 0px;
+}
+
+.shopping-mall>h5{
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+    font-size: 15px;
+}
+nav{
+    line-height: 30px;
+}
+
+footer{
+    background-color: #a2a2a2;
+}
+
+.container{
+    border: 1px solid whitesmoke;
+}
+
+.container>div>*{
+    min-height: 300px;
+}
+
+.nav-item{
+    margin-left: 10px;
+}
+
+.poly-cart{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.poly-cart ul{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    font-variant: small-caps;
+}
+.carousel{
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+.carousel-inner img{
+    margin: 0 auto;
+}
+
+/* Đổi màu khi hover vào nút điều khiển trước */
+.carousel-control-prev:hover {
+    background: linear-gradient(to right, #4b4b4bae, #ffffff00);
+  }
+
+  /* Đổi màu khi hover vào nút điều khiển sau */
+  .carousel-control-next:hover {
+    background: linear-gradient(to right,#ffffff00, #4b4b4bae );
+  }
+
+.accordion-item{
+    padding: 0px;
+    margin: 0px auto;
+}
+
+.accordion-body{
+    padding: 0px;
+    margin: 0px auto;
+}
+
+.img-thumbnail-custom {
+    height: 60px; /* Đặt kích thước cố định */
+    max-width: 95%;
+    object-fit: cover; /* Đảm bảo hình ảnh không bị căng hoặc co lại */
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    right: 0;
+    left: auto;
+}
+
+.buttonxtc> button{
+    transition: all 0.5s ease-out;
+}
+
+.btnx{
+    background: linear-gradient(to right,lightgrey 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right;
+}
+
+.btnx:hover{
+    color: white;
+    transform: scale(1.1);
+    transition: all 0.5s;
+    background-position: left;
+}
+
+.sttkm{
+    background-color: #4a90e2;
+    color: #fff;
+    display: inline-block;
+    font-size: 11px;
+    height: 20px;
+    line-height: 16px;
+    margin-top: 2px;
+    text-align: center;
+    width: 20px;
+}
+
+.proc:hover .img-proc{
+    transform: scale(1.03);
+    transition: all 0.3s;
+}
+
+
